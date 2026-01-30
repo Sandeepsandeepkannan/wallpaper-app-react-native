@@ -1,24 +1,25 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Link ,Slot } from 'expo-router';
+import { View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const unstable_settings = {
   anchor: '(tabs)',
 };
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <SafeAreaView style={{}}>
+        <View>
+           <Slot/>
+       </View>
+       <View style={{position:"absolute",top:575, backgroundColor:"red",width:"100%",flexDirection:"row",justifyContent:"space-evenly"}}>
+            <Link  href={"./forpage"} style={{height:30,width:70,backgroundColor:"green",paddingLeft:5,fontSize:15}} >For you</Link>
+            <Link href={"./explore"} style={{height:30,width:70,backgroundColor:"green",paddingLeft:5,fontSize:15}}>Explore</Link>
+            <Link href={"./account"} style={{height:30,width:70,backgroundColor:"green",paddingLeft:5,fontSize:15}}>Account</Link>
+          </View>
+    </SafeAreaView>
   );
 }
