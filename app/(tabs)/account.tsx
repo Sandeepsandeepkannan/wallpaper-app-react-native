@@ -1,9 +1,5 @@
+import { Redirect } from "expo-router";
 
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Text } from "react-native";
-
-export default function Accountpage(){
-    return <SafeAreaView>
-        <Text> Account page </Text>
-    </SafeAreaView>
+export default function AccountRedirect() {
+  return <Redirect href="/(notabs)/accountend" />;
 }

@@ -4,6 +4,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Explorepage(){
     return <SafeAreaView>
-        <Text> Explore  page </Text>
+        <Text > Explore  page </Text>
     </SafeAreaView>
 }
