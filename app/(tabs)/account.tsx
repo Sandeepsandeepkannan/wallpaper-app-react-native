@@ -1,5 +1,5 @@
 import { Redirect } from "expo-router";
 
 export default function AccountRedirect() {
-  return <Redirect href="/(notabs)/accountend" />;
+  return <Redirect href="/(nobottombar)/accountend" />;
 }
